@@ -106,7 +106,7 @@ async function request(options, postData) {
 	} catch (e) {
 		let waitTime = 2
 		console.error(RED, `Retry request ${options.path} with wait time ${waitTime}s...`)
-		await sleep(waitTime * 1000)
+		await sleep(waitTime * 50)
 		return await request(options, postData)
 	}
 }
